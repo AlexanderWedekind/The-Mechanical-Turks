@@ -1,7 +1,7 @@
 from picarx import Picarx
 import time
 
-from modules.car_speak.sayHI import sayHi
+from modules.car_speak.sayHi import sayHi
 from modules.car_play_music.carPlayMusic import playMusic
 
 px = Picarx()
