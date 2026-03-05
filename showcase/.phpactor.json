@@ -1,0 +1,9 @@
+{
+    "language_server.diagnostics_on_update": true,
+    "language_server.diagnostics_on_save": true,
+
+    "phpstan.enabled": true,
+    "phpstan.bin": "vendor/bin/phpstan",
+    "phpstan.level": 5
+}
+

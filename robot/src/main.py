@@ -1,24 +1,8 @@
-from picarx import Picarx
-import time
+from modules.menus.main_menu import MainMenu
+# from modules.menu_examples.example_menu import ExampleMenu
 
-from modules.car_speak.sayHi import sayHi
-from modules.car_play_music.carPlayMusic import playMusic
-from modules.car_move.carTurnOnADime import turnOnADime
-from modules.orientation.carMeasureDistance import measureDistance
+def Main():
+    # ExampleMenu()
+    MainMenu()
 
-px = Picarx()
-speed = 30
-stop = 0
-backUp = 15
-turnNow = 30
-
-
-
-def main():
-    sayHi()   
-    playMusic()
-    turnOnADime()
-    measureDistance()
-
-main()
-
+Main()

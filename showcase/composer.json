@@ -1,0 +1,9 @@
+{
+    "name": "ryan/robot-showcase",
+    "description": "uni assignment; showcase of robot's labyrinth traversal",
+    "type": "project",
+    "license": "GPL-2.0-only",
+    "require-dev": {
+        "phpstan/phpstan": "^2.1"
+    }
+}
