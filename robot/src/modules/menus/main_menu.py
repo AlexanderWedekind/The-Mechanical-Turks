@@ -1,5 +1,5 @@
 from modules.menus.menu import Menu
-# from modules.menus.test_menu import TestMenu
+from modules.menus.test_menu import TestMenu
 from labyrinth_traversal.traverse_labyrinth import TraverseLabyrinth
 from modules.menu_examples.example_menu import ExampleMenu
 
@@ -14,10 +14,10 @@ def MainMenu():
                 'description': 'see the example menu working',
                 'function': ExampleMenu
                 },
-#            {
-#                'description': '- [2] run tests',
-#                'function': TestMenu
-#                }
+            {
+                'description': '- [2] run tests',
+                'function': TestMenu
+                }
         ]
     Menu(message, options) 
 
