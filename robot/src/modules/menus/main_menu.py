@@ -19,6 +19,6 @@ def MainMenu():
                 'function': TestMenu
                 }
         ]
-    Menu(message, options) 
+    Menu(message, options, 'Exit application') 
 
 
