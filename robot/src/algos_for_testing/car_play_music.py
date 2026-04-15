@@ -1,5 +1,5 @@
 from picarx import Picarx
-from robot_hat.robot_hat.music import Music
+from robot_hat import Music
 import readchar
 
 music = Music()
