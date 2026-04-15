@@ -4,7 +4,7 @@ def GetNumInput(options, message):
     while valid == False:
         try:
             userInput = int(input(message))
-            if userInput > 0 and userInput < len(options) + 1:
+            if userInput > 0 and userInput < len(options) + 2:
                 valid = True
             else:
                 valid = False
