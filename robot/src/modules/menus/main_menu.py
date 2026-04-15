@@ -11,11 +11,11 @@ def MainMenu():
                 'function': TraverseLabyrinth
                 },
             {
-                'description': 'see the example menu working',
+                'description': 'See the example menu working',
                 'function': ExampleMenu
                 },
             {
-                'description': '- [2] run tests',
+                'description': 'Run tests',
                 'function': TestMenu
                 }
         ]
