@@ -1,7 +1,7 @@
 from modules.menus.get_num_input import GetNumInput
 
 def Menu(message, options, exitMessage = 'return to previous menu'):
-    choice = 1
+    userChoice = 1
     def actionUserChoice():
         print(message)
         for option in options:
@@ -14,7 +14,8 @@ def Menu(message, options, exitMessage = 'return to previous menu'):
                     options[i]['function']()
                 except Exception:
                     print(f'{Exception}')
-    while choice > 0 and choice < len(options) +1:
-        actionUserChoice()
+        return choice
+    while userChoice > 0 and userChoice < len(options) +1:
+        userChoice = actionUserChoice()
  
        
