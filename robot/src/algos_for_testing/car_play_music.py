@@ -6,16 +6,16 @@ import readchar
 def PlayMusic():
     music = Music()
     music.music_set_volume(25)
-    music.sound_play('../sounds/car-engine-start.wav')
-    music.music_play('../music/423321__dominictreis__the-doofus-sneaks-around.mp3')
-    music.sound_play('../sounds/car-double-horn.wav')
+    music.sound_play('~/repos/The-Mechanical-Turks/robot/sounds/car-start-engine.wav')
+    music.music_play('~/repos/The-Mechanical-Turks/music/423321__dominictreis__the-doofus-sneaks-around.mp3')
+    music.sound_play('~/repos/The-Mechanical-Turks/robot/sounds/car-double-horn.wav')
     music.stop()
 
 def PlayMusicNonStop():
     music = Music()
     music.music_set_volume(25)
-    music.sound_play('../sounds/car-engine-start.wav')
-    music.sound_play('../sounds/car-double-horn.wav')
+    music.sound_play('~/repos/The-Mechanical-Turks/robot/sounds/car-start-engine.wav')
+    music.sound_play('~/repos/The-Mechanical-Turks/robot/sounds/car-double-horn.wav')
     print('-- press [m] to start/stop music; press [q] to quit menu --')
     musicOn = False
     while True:
@@ -28,7 +28,7 @@ def PlayMusicNonStop():
         elif keyStroke == 'q':
             break
         while musicOn == True:
-            music.music_play('../music/423321__dominictreis__the-doofus-sneaks-around.mp3')
+            music.music_play('~/repos/The-Mechanical-Turks/music/423321__dominictreis__the-doofus-sneaks-around.mp3')
     music.stop()
 
             
