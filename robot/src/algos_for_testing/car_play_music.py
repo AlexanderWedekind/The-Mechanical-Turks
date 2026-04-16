@@ -1,6 +1,10 @@
 from picarx import Picarx
 from robot_hat import Music
 import readchar
+from pathlib import Path
+
+currentDir = Path(__file__).parent
+print(f"-- Current Dir: '{currentDir}'")
 
 
 def PlayMusic():
