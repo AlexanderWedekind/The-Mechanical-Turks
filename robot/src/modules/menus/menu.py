@@ -13,7 +13,7 @@ def Menu(message, options, exitMessage = 'return to previous menu'):
                 try:
                     options[i]['function']()
                 except Exception:
-                    print(f'{Exception}')
+                    print(f'{dir(Exception)}')
         return choice
     while userChoice > 0 and userChoice < len(options) +1:
         userChoice = actionUserChoice()
