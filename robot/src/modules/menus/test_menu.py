@@ -2,6 +2,8 @@ from modules.menus.menu import Menu
 from algos_for_testing.car_play_music import PlayMusic
 from algos_for_testing.car_play_music import PlayMusicNonStop
 from algos_for_testing.car_measure_distance import MeasureDistance
+from algos_for_testing.car_say_hi import sayHi
+from algos_for_testing.car_turn_on_a_dime import turnOnADime
 
 def TestMenu():
     message = 'choose a function / algo you want to test: '
@@ -18,5 +20,13 @@ def TestMenu():
                 'description': 'measure distance',
                 'function': MeasureDistance
                 },
+            {
+                'description': "play 'starts engine', 'greeting', and 'horn-beep' sounds",
+                'function': sayHi
+                },
+            {
+                'description': 'tight turn circle',
+                'function': turnOnADime
+                }
         ]
     Menu(message, options)
