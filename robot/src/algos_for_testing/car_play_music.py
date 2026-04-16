@@ -2,15 +2,17 @@ from picarx import Picarx
 from robot_hat import Music
 import readchar
 
-music = Music()
 
 def PlayMusic():
+    music = Music()
     music.music_set_volume(25)
     music.sound_play('../sounds/car-engine-start.wav')
     music.music_play('../music/423321__dominictreis__the-doofus-sneaks-around.mp3')
     music.sound_play('../sounds/car-double-horn.wav')
+    music.stop()
 
 def PlayMusicNonStop():
+    music = Music()
     music.music_set_volume(25)
     music.sound_play('../sounds/car-engine-start.wav')
     music.sound_play('../sounds/car-double-horn.wav')
@@ -27,6 +29,7 @@ def PlayMusicNonStop():
             break
         while musicOn == True:
             music.music_play('../music/423321__dominictreis__the-doofus-sneaks-around.mp3')
+    music.stop()
 
             
 
