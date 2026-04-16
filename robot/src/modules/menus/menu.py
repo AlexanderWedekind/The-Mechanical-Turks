@@ -1,4 +1,5 @@
 from modules.menus.get_num_input import GetNumInput
+import traceback
 
 def Menu(message, options, exitMessage = 'return to previous menu'):
     userChoice = 1
@@ -12,8 +13,13 @@ def Menu(message, options, exitMessage = 'return to previous menu'):
             if choice -1 == i:
                 try:
                     options[i]['function']()
-                except Exception:
-                    print(f'{dir(Exception)}')
+                except Exception as exception:
+                    print('-- Exception --')
+                    print(f'Type: {type(exception)}')
+                    print('Message:', exception)
+                    print('Args:', exception.args)
+                    print('Traceback:')
+                    traceback.print_exc()
         return choice
     while userChoice > 0 and userChoice < len(options) +1:
         userChoice = actionUserChoice()
