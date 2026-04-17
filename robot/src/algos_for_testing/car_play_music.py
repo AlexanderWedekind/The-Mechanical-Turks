@@ -12,7 +12,7 @@ filePath = pathToMain / '..' / 'sounds' / 'car-start-engine.py'
 
 def PlayMusic():
     music = Music()
-    music.music_set_volume(25)
+    music.music_set_volume(50)
     music.sound_play(getPathToFile(['..', 'sounds', 'car-start-engine.wav']))
     music.music_play(getPathToFile(['..', 'music', '423321__dominictreis__the-doofus-sneaks-around.mp3']))
     music.sound_play(getPathToFile(['..', 'sounds', 'car-double-horn.wav']))
