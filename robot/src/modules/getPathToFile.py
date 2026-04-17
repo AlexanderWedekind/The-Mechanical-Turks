@@ -6,5 +6,5 @@ def getPathToFile(segments):
         filePath = filePath / segment
     
     print(f"-- resolved path to file:\n{filePath.resolve()}")
-    return filePath.resolve()
+    return str(filePath.resolve())
 
