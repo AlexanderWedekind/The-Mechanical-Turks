@@ -11,7 +11,7 @@ def getPathToFile(segments):
     print(f"-- 'pathToSrc+/+..':\n{unresolvedPathToRobot}")
     print(f"-- resolved 'pathToSrc+/+..':\n{unresolvedPathToRobot.resolve()}")
     pathToRobot = unresolvedPathToRobot.resolve()
-    print(f"-- path to 'src':\n{pathToSrc}\n-- path to 'robot':\n{pathToRobot}")
+    print(f"-- path to 'robot':\n{unresolvedPathToRobot}\n-- resolved path to 'robot':\n{pathToRobot}")
 
     unresFilePath = basePath
 
