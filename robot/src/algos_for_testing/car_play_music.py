@@ -13,16 +13,16 @@ filePath = pathToMain / '..' / 'sounds' / 'car-start-engine.py'
 def PlayMusic():
     music = Music()
     music.music_set_volume(25)
-    music.sound_play(getPathToFile(['sounds', 'car-start-engine.wav']))
-    music.music_play(getPathToFile(['music', '423321__dominictreis__the-doofus-sneaks-around.mp3']))
-    music.sound_play(getPathToFile(['sounds', 'car-double-horn.wav']))
+    music.sound_play(getPathToFile(['..', 'sounds', 'car-start-engine.wav']))
+    music.music_play(getPathToFile(['..', 'music', '423321__dominictreis__the-doofus-sneaks-around.mp3']))
+    music.sound_play(getPathToFile(['..', 'sounds', 'car-double-horn.wav']))
     music.stop()
 
 def PlayMusicNonStop():
     music = Music()
     music.music_set_volume(25)
-    music.sound_play(getPathToFile(['sounds', 'car-start-engine.wav']))
-    music.sound_play(getPathToFile(['sounds', 'car-double-horn.wav']))
+    music.sound_play(getPathToFile(['..', 'sounds', 'car-start-engine.wav']))
+    music.sound_play(getPathToFile(['..', 'sounds', 'car-double-horn.wav']))
     print('-- press [m] to start/stop music; press [q] to quit menu --')
     musicOn = False
     keyStroke = ' '
@@ -36,8 +36,8 @@ def PlayMusicNonStop():
         elif keyStroke == 'q':
             break
         while musicOn == True:
-            music.music_play('~/repos/The-Mechanical-Turks/music/423321__dominictreis__the-doofus-sneaks-around.mp3')
-    music.stop()
+            music.music_play(getPathToFile(['..', 'music', '423321__dominictreis__the-doofus-sneaks-around.mp3']))
+            music.stop()
 
             
 

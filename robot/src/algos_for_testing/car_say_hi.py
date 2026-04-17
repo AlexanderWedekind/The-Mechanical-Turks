@@ -5,17 +5,17 @@ from modules.getPathToFile import getPathToFile
 
 
 def sayHi():
-    greeting = 'Hi, Diego!'
+    greeting = 'Hi, Ryan!'
 
     bob = Picarx()
     tts = TTS()
     music = Music()
 
     music.music_set_volume(25)
-    music.sound_play(getPathToFile(['sounds', 'car-start-engine.wav']))
+    music.sound_play(getPathToFile(['..', 'sounds', 'car-start-engine.wav']))
     tts.lang("en-US")
     tts.speak(greeting)
-    music.sound_play(getPathToFile(['sounds', 'car-double-horn.wav']))
+    music.sound_play(getPathToFile(['..', 'sounds', 'car-double-horn.wav']))
     bob.stop()
 
 
