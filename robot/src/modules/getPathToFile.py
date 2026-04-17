@@ -1,7 +1,7 @@
 from pathlib import Path
 
 def getPathToFile(segments):
-    pathToSrc = Path('home/mechanical-turk/repos/The-Machanical-Turks/robot/src/')
+    pathToSrc = Path('/home/mechanical-turk/repos/The-Machanical-Turks/robot/src/')
     print(f"-- pathToSrc:\n{pathToSrc}")
     print(f"-- resolved psthToSrc:\n{pathToSrc.resolve()}")
     basePath = pathToSrc 
