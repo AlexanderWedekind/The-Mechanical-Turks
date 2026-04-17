@@ -25,7 +25,8 @@ def PlayMusicNonStop():
     music.sound_play(getPathToFile(['sounds', 'car-double-horn.wav']))
     print('-- press [m] to start/stop music; press [q] to quit menu --')
     musicOn = False
-    while True:
+    keyStroke = ' '
+    while keyStroke != 'q':
         keyStroke = readchar.readkey().lower()
         if keyStroke == 'm':
             if musicOn == False:
