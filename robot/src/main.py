@@ -1,8 +1,10 @@
 from modules.menus.main_menu import MainMenu
-# from modules.menu_examples.example_menu import ExampleMenu
+from hardware_initialisation import initHardware, hardwareCleanup
+from safe_call_with_except_logging import crashCallLogExc, contCallLogExc
 
 def Main():
-    # ExampleMenu()
+    crashCallLogExc(initHardware)
     MainMenu()
+    contCallLogExc(hardwareCleanup)
 
-Main()
+crashCallLogExc(Main)

@@ -1,13 +1,8 @@
-from robot_hat import Motors 
-from picarx import Picarx
+from hardware_initialisation import robotParts
 
 def turnOnADime():
-    bob = Picarx()
-    motors = Motors()
 
-    motors.set_left_reverse()
-    bob.set_dir_servo_angle(90)
-    motors.forward(50)
+    robotParts['motors'].set_left_reverse()
+    robotParts['pirobot'].set_dir_servo_angle(90)
+    robotParts['motors'].forward(50)
 
-    bob.stop()
-    motors.stop()

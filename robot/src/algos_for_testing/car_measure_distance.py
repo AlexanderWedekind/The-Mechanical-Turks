@@ -1,11 +1,8 @@
-from picarx import Picarx
-
+from hardware_initialisation import robotParts
 
 def MeasureDistance():
-    bob = Picarx()
-    distance = bob.ultrasonic.read()
+    distance = robotParts['pirobot'].ultrasonic.read()
     print('-- distance measured: ' + str(distance))
-    bob.stop()
     return distance
 
 
