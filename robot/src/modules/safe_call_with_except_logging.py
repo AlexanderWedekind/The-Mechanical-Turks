@@ -18,6 +18,7 @@ def crashCallLogExc(function, *args):
     except Exception as e:
         print(f"-- Exception --\nType: {type(e)}\nMessage:\n{e}\nArgs: {e.args}\nTraceback:")
         traceback.print_exc()
-    contCallLogExc(cleanup)
-    raise
+        contCallLogExc(cleanup)
+        raise
+
 
