@@ -2,7 +2,7 @@ from picarx import Picarx
 from robot_hat import Music
 from robot_hat import TTS
 from robot_hat import Motors
-from modules.safe_call_with_except_logging import contCallLogExc, crashCallLogExc
+from modules.safe_call_with_except_logging import crashCallLogExc
 
 robotParts = {
         'pirobot' : None,
@@ -27,11 +27,6 @@ def initMotors():
     robotParts['motors'] = Motors()
     print('- Motors initialised...')
 
-def pirobotCleanup():
-    robotParts['pirobot'].stop()
-    print('- Pirobot cleaned up...')
-    robotParts['pirobot'] = None
-
 def initHardware():
     if robotParts['pirobot'] == None:
         crashCallLogExc(initPirobot)
@@ -42,8 +37,3 @@ def initHardware():
     if robotParts['motors'] == None:
         crashCallLogExc(initMotors)
 
-def hardwareCleanup():
-    if robotParts['pirobot'] != None:
-        if robotParts['pirobot'] != None:
-            contCallLogExc(pirobotCleanup)
-   
