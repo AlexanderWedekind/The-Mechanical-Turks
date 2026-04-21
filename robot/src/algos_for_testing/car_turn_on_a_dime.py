@@ -1,4 +1,4 @@
-from hardware_initialisation import robotParts
+from modules.hardware_initialisation import robotParts
 
 def turnOnADime():
 

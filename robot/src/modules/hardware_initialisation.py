@@ -2,7 +2,7 @@ from picarx import Picarx
 from robot_hat import Music
 from robot_hat import TTS
 from robot_hat import Motors
-from safe_call_with_except_logging import contCallLogExc, crashCallLogExc
+from modules.safe_call_with_except_logging import contCallLogExc, crashCallLogExc
 
 robotParts = {
         'pirobot' : None,

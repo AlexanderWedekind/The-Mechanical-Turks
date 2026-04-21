@@ -1,5 +1,5 @@
 import traceback
-from hardware_initialisation import hardwareCleanup
+from modules.hardware_initialisation import hardwareCleanup
 
 def contCallLogExc(function, *args):
     try:
