@@ -8,7 +8,7 @@ def sayHi():
     robotParts['music'].music_set_volume(25)
     robotParts['music'].sound_play(getPathToFile(['..', 'sounds', 'car-start-engine.wav']))
     robotParts['tts'].lang("en-US")
-    robotParts['tts'].espeak(greeting)
+    robotParts['tts'].espeak('espeak', greeting)
     robotParts['music'].sound_play(getPathToFile(['..', 'sounds', 'car-double-horn.wav']))
 
 
