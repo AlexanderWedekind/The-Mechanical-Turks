@@ -20,7 +20,7 @@ def initMusic():
     print('- Music initialised...')
 
 def initTTS():
-    robotParts['tts'] = TTS.land('en-US')
+    robotParts['tts'] = TTS.lang('en-US')
     print('- TTS initialised...')
 
 def initMotors():
