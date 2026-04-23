@@ -34,6 +34,6 @@ def initHardware():
         crashCallLogExc(initMusic)
     if robotParts['tts'] == None:
         crashCallLogExc(initTTS)
-#    if robotParts['motors'] == None:
-#        crashCallLogExc(initMotors)
+    if robotParts['motors'] == None:
+        crashCallLogExc(initMotors)
 
