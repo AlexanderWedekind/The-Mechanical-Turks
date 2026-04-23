@@ -35,5 +35,5 @@ def initHardware():
     if robotParts['tts'] == None:
         crashCallLogExc(initTTS)
     if robotParts['motors'] == None:
-        crashCallLogExc(initMotors())
+        crashCallLogExc(initMotors)
 
