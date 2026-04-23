@@ -25,7 +25,7 @@ def initTTS():
     print('- TTS initialised...')
 
 def initMotors():
-    robotParts['motors'] = Motors()
+    robotParts['motors'] = Motors(getuser())
     print('- Motors initialised...')
 
 def initHardware():
@@ -36,5 +36,5 @@ def initHardware():
     if robotParts['tts'] == None:
         crashCallLogExc(initTTS)
     if robotParts['motors'] == None:
-        crashCallLogExc(initMotors, getuser())
+        crashCallLogExc(initMotors())
 
