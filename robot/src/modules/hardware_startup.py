@@ -20,7 +20,8 @@ def initMusic():
     print('- Music initialised...')
 
 def initTTS():
-    robotParts['tts'] = TTS()    print('- TTS initialised...')
+    robotParts['tts'] = TTS()
+    print('- TTS initialised...')
 
 def initMotors():
     robotParts['motors'] = Motors()
