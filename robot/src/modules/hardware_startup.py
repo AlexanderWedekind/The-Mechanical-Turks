@@ -3,7 +3,6 @@ from robot_hat import Music
 from robot_hat import TTS
 from robot_hat import Motors
 from modules.safe_call_with_except_logging import crashCallLogExc
-from getpass import getuser
 
 robotParts = {
         'pirobot' : None,
@@ -25,7 +24,7 @@ def initTTS():
     print('- TTS initialised...')
 
 def initMotors():
-    robotParts['motors'] = Motors(getuser())
+    robotParts['motors'] = Motors()
     print('- Motors initialised...')
 
 def initHardware():
