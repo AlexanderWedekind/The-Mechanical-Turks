@@ -10,8 +10,15 @@ def pirobotCleanup():
     print('- Pirobot cleaned up...')
     robotParts['pirobot'] = None
 
+def motorsCleanup():
+    robotParts['motors'].stop()
+    print('- Motors cleaned up...')
+    robotParts['motors'] = None
+
 def hardwareCleanup():
     if robotParts['pirobot'] != None:
-        if robotParts['pirobot'] != None:
-            contCallLogExc(pirobotCleanup)
+        contCallLogExc(pirobotCleanup)
+    if robotParts['motors'] != None:
+        contCallLogExc(motorsCleanup)
+        
  
