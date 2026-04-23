@@ -3,6 +3,7 @@ from robot_hat import Music
 from robot_hat import TTS
 from robot_hat import Motors
 from modules.safe_call_with_except_logging import crashCallLogExc
+from getpass import getuser
 
 robotParts = {
         'pirobot' : None,
@@ -35,5 +36,5 @@ def initHardware():
     if robotParts['tts'] == None:
         crashCallLogExc(initTTS)
     if robotParts['motors'] == None:
-        crashCallLogExc(initMotors)
+        crashCallLogExc(initMotors, getuser())
 
