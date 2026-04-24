@@ -19,6 +19,6 @@ def hardwareCleanup():
     if robotParts['pirobot'] != None:
         contCallLogExc(pirobotCleanup)
 #    if robotParts['motors'] != None:
-        contCallLogExc(motorsCleanup)
+#        contCallLogExc(motorsCleanup)
         
  
