@@ -2,7 +2,7 @@ from modules.hardware_startup import robotParts
 from modules.state.road_markings import roadMarkings, printRoadMarkings
 
 def readRoadMarkings():
-    roadMarkingsList = robotParts['pirobot'].get_line_status(robotParts['pirobot'].get_greyscale_data())
+    roadMarkingsList = robotParts['pirobot'].get_line_status(robotParts['pirobot'].get_grayscale_data())
     if roadMarkingsList[0] == 0:
         roadMarkings['leftSensor'] = True
     else:
