@@ -16,5 +16,6 @@ def readRoadMarkings():
     else:
         roadMarkings['rightSensor'] = False
 
-readRoadMarkings()
-printRoadMarkings()
+def detectLine():
+    readRoadMarkings()
+    printRoadMarkings()
