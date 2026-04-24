@@ -4,7 +4,7 @@ from algos_for_testing.car_play_music import PlayMusicNonStop
 from algos_for_testing.car_measure_distance import MeasureDistance
 from algos_for_testing.car_say_hi import sayHi
 from algos_for_testing.car_turn_on_a_dime import turnOnADime
-from modules.line_follow import detectLine
+from algos_for_testing.line_follow import detectLine
 
 def TestMenu():
     message = 'choose a function / algo you want to test: '
