@@ -3,6 +3,7 @@ from modules.state.road_markings import roadMarkings, printRoadMarkings
 
 def readRoadMarkings():
     roadMarkingsList = robotParts['pirobot'].get_line_status(robotParts['pirobot'].get_grayscale_data())
+    print(f"-- roadMarkingsList:\n{roadMarkingsList}")
     if roadMarkingsList[0] == 0:
         roadMarkings['leftSensor'] = True
     else:
