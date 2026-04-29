@@ -4,8 +4,17 @@ from robot_hat import TTS
 from robot_hat import Motors
 from modules.safe_call_with_except_logging import contCallLogExc
 from modules.hardware_startup import robotParts
+from modules.state.robot.road_markings import watchRoadMarkings
+from modules.state.robot.robot_state import robotState
+from module.state.robot.get_distance import watchDistance
 
 def pirobotCleanup():
+    if watchDistance.is_alive():
+        robotState['watching_distance'] = False
+        watchDistance.join()
+    if watchRoadMarkings.is_alive():
+        robotState['watching_road_markings'] = False
+        watchRoadMarkings.join()
     robotParts['pirobot'].stop()
     print('- Pirobot cleaned up...')
     robotParts['pirobot'] = None
