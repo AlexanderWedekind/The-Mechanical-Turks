@@ -1,4 +1,4 @@
-from modules.hardware_startup import robotParts
+from modules.state.robot.robot_parts import robotParts
 from modules.state.robot.robot_state import robotState
 import threading
 

@@ -1,4 +1,3 @@
-import threading
 from picarx import Picarx
 from robot_hat import Music
 from robot_hat import TTS
@@ -7,13 +6,8 @@ from modules.safe_call_with_except_logging import crashCallLogExc
 from modules.state.robot.robot_state import robotState
 from modules.state.robot.road_markings import watchRoadMarkings
 from modules.state.robot.get_distance import watchDistance
+from module.state.robot.robot_parts import robotParts
 
-robotParts = {
-        'pirobot' : None,
-        'music': None,
-        'tts': None,
-        'motors': None
-        }
 
 def initPirobot():
     robotParts['pirobot'] = Picarx()

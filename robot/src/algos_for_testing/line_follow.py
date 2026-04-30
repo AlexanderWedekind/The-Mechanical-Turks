@@ -1,5 +1,5 @@
 from modules.state.robot.road_markings import roadMarkings, readRoadMarkings
-from modules.hardware_startup import robotParts
+from modules.state.robot.robot_parts import robotParts
 
 def followLine():
     while True:

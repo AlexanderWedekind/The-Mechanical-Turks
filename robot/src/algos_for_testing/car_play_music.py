@@ -1,5 +1,5 @@
 from modules.getPathToFile import getPathToFile
-from modules.hardware_startup import robotParts
+from modules.state.robot.robot_parts import robotParts
 import readchar
 
 def PlayMusic():
