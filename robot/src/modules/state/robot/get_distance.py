@@ -7,7 +7,7 @@ def readDistance():
     if robotState['watching_distance'] == False:
         robotState['watching_distance'] = True
         while robotState['watching_distance'] == True:
-            robotState['distance'] = robotParts['pirobot'].get_distance_reading()
+            robotState['distance'] = round(robotParts['pirobot'].ultrasonic.read(), 2)
             time.sleep(0.01)
         robotState['was_used_watch_distance'] = True
 
