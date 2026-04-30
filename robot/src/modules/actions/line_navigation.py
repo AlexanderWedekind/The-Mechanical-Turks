@@ -10,15 +10,21 @@ def followLine():
                 if robotState['current_speed'] != robotState['driving_speeds']['forwards_line_follow']:
                     robotState['current_speed'] = robotState['driving_speeds']['forwards_line_follow']
                 robotParts['pirobot'].forward(robotState['current_speed'])
-                robotstate['driving'] = True
+                robotState['driving'] = True
             else:
-                if robotstate['current_speed'] != robotState['driving_speeds']['forwards_line_follow']:
-                    robotState['current_speed'] = robotstate['driving_speeds']['forwards_line_follow']
+                if robotState['current_speed'] != robotState['driving_speeds']['forwards_line_follow']:
+                    robotState['current_speed'] = robotState['driving_speeds']['forwards_line_follow']
                 robotParts['pirobot'].forward(robotState['current_speed'])
             if robotState['road_markings']['middle_sensor'] == True:
-                robotParts['pirobot'].set_dir_servo_angle(0)
+                robotState['current_steering_angle'] = robotState['current_steering_angle'] * -1
+                robotParts['pirobot'].set_dir_servo_angle(robotState['current_steering_angle'])
             if robotState['road_markings']['left_sensor'] == True and robotState['road_markings']['middle_sensor'] == False:
-                robotParts['pirobot'].set_dir_servo_angle(robotState['steering_angles']['shallow_right'])
+                robotState['current_steering_angle'] = robotState['steering_angles']['shallow_right']
+                robotParts['pirobot'].set_dir_servo_angle(robotState['current_steering_angle'])
             if robotState['road_markings']['right_sensor'] == True and robotState['road_markings']['middle_sensor'] == False:
-                robotParts['pirobot'].set_dir_servo_angle(robotState['steering_angles']['shallow_left'])
+                robotState['current_steering_angle'] = robotState['steering_angles']['shallow_left']
+                robotParts['pirobot'].set_dir_servo_angle(robotState['current_steering_angle'])
+
+def lineFollowingThread():
+    return threading.Thread(target = followLine)
 

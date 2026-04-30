@@ -18,7 +18,7 @@ def readRoadMarkings():
                 if robotState['road_markings']['left_sensor'] == False:
                     robotState['road_markings']['left_sensor'] = True
                     robotState['changed_road_markings'] = True
-            else if grayScaleReadResult[0] > robotState['grayscale_sensitivity']:
+            elif grayScaleReadResult[0] > robotState['grayscale_sensitivity']:
                 if robotState['road_markings']['left_sensor'] == True:
                     robotState['road_markings']['left_sensor'] = False
                     robotState['changed_road_markings'] = True
@@ -26,7 +26,7 @@ def readRoadMarkings():
                 if robotState['road_markings']['middle_sensor'] == False:
                     robotState['road_markings']['middle_sensor'] = True
                     robotState['changed_road_markings'] = True
-            else if grayScaleReadResult[1] > robotState['grayscale_sensitivity']:
+            elif grayScaleReadResult[1] > robotState['grayscale_sensitivity']:
                 if robotState['road_markings']['middle_sensor'] == True:
                     robotState['road_markings']['middle_sensor'] = False
                     robotState['changed_road_markings'] = True
@@ -34,7 +34,7 @@ def readRoadMarkings():
                 if robotState['road_markings']['right_sensor'] == False:
                     robotState['road_markings']['right_sensor'] = True
                     robotState['changed_road_markings'] = True
-            else if grayScaleReadResult[2] > robotState['grayscale_sensitivity']:
+            elif grayScaleReadResult[2] > robotState['grayscale_sensitivity']:
                 if robotState['road_markings']['right_sensor'] == True:
                     robotState['road_markings']['right_sensor'] = False
                     robotState['changed_road_markings'] = True
