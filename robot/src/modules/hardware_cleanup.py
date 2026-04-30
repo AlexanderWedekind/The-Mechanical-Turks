@@ -2,7 +2,7 @@ from modules.safe_call_with_except_logging import contCallLogExc
 from modules.state.robot.robot_parts import robotParts
 from modules.state.robot.road_markings import watchRoadMarkings
 from modules.state.robot.robot_state import robotState
-from module.state.robot.get_distance import watchDistance
+from modules.state.robot.get_distance import watchDistance
 
 def pirobotCleanup():
     if watchDistance.is_alive():
