@@ -1,5 +1,7 @@
 robotState = {
         'driving': False,
+        'current_speed': None,
+        'current_steering_angle': None,
         'road_clear': True,
         'closing_down': True,
         'watching_road_markings': False,
@@ -10,4 +12,23 @@ robotState = {
         'line_found': False,
         'is_on_line': False,
         'is_following_line': False,
+        'changed_road_markings': False,
+        'grayscale_sensitivity': 400,
+        'road_markings': {
+            'left_sensor': False,
+            'middle_sensor': False,
+            'right_sensor': False,
+            },
+        'driving_speeds': {
+            'forwards_line_follow': 50,
+            'reverse_line_follow': 30,
+            'cornering': 25,
+            },
+        'steering_angles': {
+            'sharp_right': 45,
+            'shallow_right': 15,
+            'sharp_left': -45,
+            'shallow_left': -15,
+            },
+        'last_visited_intersection': None
         }

@@ -1,15 +1,11 @@
 from modules.hardware_startup import robotParts
 import threading
 from modules.state.robot.robot_state import robotState
+import time
 
-roadMarkings = {
-        'leftSensor': False,
-        'middleSensor': False,
-        'rightSensor': False
-        }
+def printRoadMarkings(changed = ""):
+    print(f"-- Road Markings{changed}: [{robotState['road_markings']['left_sensor']}] [{robotState['road_markings']['middle_sensor']}] [{robotState['road_markings']['right_sensor']}]")
 
-def printRoadMarkings():
-    print(f"-- Road Markings --\n[{roadMarkings['leftSensor']}] [{roadMarkings['middleSensor']}] [{roadMarkings['rightSensor']}]")
 def readRoadMarkings():
     if robotState['watching_road_markings'] == False:
         robotState['watching_road_markings'] = True
@@ -18,18 +14,34 @@ def readRoadMarkings():
         #    print(f"-- grayScaleReadResult:\n{grayScaleReadResult}")
         #    roadMarkingsList = robotParts['pirobot'].get_line_status(grayScaleReadResult)
         #    print(f"-- roadMarkingsList:\n{roadMarkingsList}")
-            if grayScaleReadResult[0] < 400:
-                roadMarkings['leftSensor'] = True
-            else:
-                roadMarkings['leftSensor'] = False
-            if grayScaleReadResult[1] < 400:
-                roadMarkings['middleSensor'] = True
-            else:
-                roadMarkings['middleSensor'] = False
-            if grayScaleReadResult[2] < 400:
-                roadMarkings['rightSensor'] = True
-            else:
-                roadMarkings['rightSensor'] = False
+            if grayScaleReadResult[0] < robotState['grayscale_sensitivity']:
+                if robotState['road_markings']['left_sensor'] == False:
+                    robotState['road_markings']['left_sensor'] = True
+                    robotState['changed_road_markings'] = True
+            else if grayScaleReadResult[0] > robotState['grayscale_sensitivity']:
+                if robotState['road_markings']['left_sensor'] == True:
+                    robotState['road_markings']['left_sensor'] = False
+                    robotState['changed_road_markings'] = True
+            if grayScaleReadResult[1] < robotState['grayscale_sensitivity']:
+                if robotState['road_markings']['middle_sensor'] == False:
+                    robotState['road_markings']['middle_sensor'] = True
+                    robotState['changed_road_markings'] = True
+            else if grayScaleReadResult[1] > robotState['grayscale_sensitivity']:
+                if robotState['road_markings']['middle_sensor'] == True:
+                    robotState['road_markings']['middle_sensor'] = False
+                    robotState['changed_road_markings'] = True
+            if grayScaleReadResult[2] < robotState['grayscale_sensitivity']:
+                if robotState['road_markings']['right_sensor'] == False:
+                    robotState['road_markings']['right_sensor'] = True
+                    robotState['changed_road_markings'] = True
+            else if grayScaleReadResult[2] > robotState['grayscale_sensitivity']:
+                if robotState['road_markings']['right_sensor'] == True:
+                    robotState['road_markings']['right_sensor'] = False
+                    robotState['changed_road_markings'] = True
+            if robotState['changed_road_markings'] == True:
+                printRoadMarkings(' changed')
+                robotState['changed_road_markings'] = False
+            time.sleep(0.01)
         robotState['was_used_watch_road_markings'] = True
 
 def detectLine():
