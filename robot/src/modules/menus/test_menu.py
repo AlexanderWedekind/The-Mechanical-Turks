@@ -4,7 +4,6 @@ from algos_for_testing.car_play_music import PlayMusicNonStop
 from algos_for_testing.car_measure_distance import MeasureDistance
 from algos_for_testing.car_say_hi import sayHi
 from algos_for_testing.car_turn_on_a_dime import turnOnADime
-from algos_for_testing.line_follow import detectLine
 
 def TestMenu():
     message = 'choose a function / algo you want to test: '
@@ -29,9 +28,5 @@ def TestMenu():
                 'description': 'tight turn circle',
                 'function': turnOnADime
                 },
-            {
-                'description': 'test detecting lines with greyscale sensor',
-                'function': detectLine
-                }
         ]
     Menu(message, options)
