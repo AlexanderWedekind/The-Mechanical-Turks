@@ -31,7 +31,8 @@ def startWatchingRoadMarkings():
             watchRoadMarkings.start()
         else:
             print("--> road marking thread allready alive -> no started again")
-    print("--> road marking thread cannot be used twice")
+    else:
+        print("--> road marking thread cannot be used twice")
 
 def startWatchingDistance():
     if robotState['was_used_watch_distance'] == False:
@@ -39,7 +40,8 @@ def startWatchingDistance():
             watchDistance.start()
         else:
             print("--> watch distance thread allready alive -> not started again")
-    print("--> watch distance thread can only be used once")
+    else:
+        print("--> watch distance thread can only be used once")
 
 def initHardware():
     if robotParts['pirobot'] == None:
