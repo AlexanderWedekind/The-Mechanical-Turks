@@ -14,6 +14,7 @@ robotState = {
         'is_following_line': False,
         'changed_road_markings': False,
         'grayscale_sensitivity': 400,
+        'grayscale_threshold_margin': 0.1,
         'road_markings': {
             'left_sensor': False,
             'middle_sensor': False,
