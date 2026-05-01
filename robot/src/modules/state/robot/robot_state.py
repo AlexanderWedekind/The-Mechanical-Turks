@@ -30,5 +30,6 @@ robotState = {
             'sharp_left': -45,
             'shallow_left': -15,
             },
-        'last_visited_intersection': None
+        'last_visited_intersection': None,
+        'bearing': 'north',
         }
