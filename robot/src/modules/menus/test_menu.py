@@ -4,10 +4,15 @@ from algos_for_testing.car_play_music import PlayMusicNonStop
 from algos_for_testing.car_measure_distance import MeasureDistance
 from algos_for_testing.car_say_hi import sayHi
 from algos_for_testing.car_turn_on_a_dime import turnOnADime
+from algos_for_testing.drive import testDriving
 
 def TestMenu():
     message = 'choose a function / algo you want to test: '
     options = [
+            {
+                'description': 'test start / stop driving',
+                'function': testDriving
+                },
             {
                 'description': 'test playing music',
                 'function': PlayMusic

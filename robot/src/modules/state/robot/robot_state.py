@@ -19,9 +19,12 @@ robotState = {
         'grayscale_threshold_margin': 0.3,
         'road_markings': [False, False, False],
         'driving_speeds': {
-            'forwards_line_follow': 50,
-            'reverse_line_follow': 30,
-            'cornering': 25,
+            'stopped': 0,
+            'forwards': 30,
+            'reverse': 10,
+            'forwards_line_follow': 25,
+            'reverse_line_follow': 5,
+            'cornering': 15,
             },
         'steering_angles': {
             'sharp_right': 45,

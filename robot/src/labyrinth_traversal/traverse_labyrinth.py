@@ -9,8 +9,8 @@ def TraverseLabyrinth():
         if keyPress == 'f':
             lineFollow = lineFollowingThread()
             lineFollow.start()
-    robotState['following_line'] = False
     if lineFollow.is_alive():
+        robotState['following_line'] = False
         lineFollow.join()
 
 
