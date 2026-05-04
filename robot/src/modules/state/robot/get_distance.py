@@ -8,7 +8,7 @@ def readDistance():
         robotState['watching_distance'] = True
         while robotState['watching_distance'] == True:
             robotState['distance'] = round(robotParts['pirobot'].ultrasonic.read(), 2)
-            time.sleep(0.01)
+            time.sleep(robotState['read_distance_timeout'])
         robotState['was_used_watch_distance'] = True
 
 watchDistance = threading.Thread(target = readDistance)
