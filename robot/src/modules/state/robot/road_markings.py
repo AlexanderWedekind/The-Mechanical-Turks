@@ -47,8 +47,10 @@ def readRoadMarkings():
         def addRoadMarkingsState():
             nonlocal keptLineReads
             if consistentLineReads() == True:
-                robotState['road_markings'] = keptLineReads[0]
-                robotState['changed_road_markings'] = True
+                for i in range(3):
+                    if keptLineReads[0][i] != robotState['road_markings'][i]:
+                        robotState['road_markings'][i] = keptLineReads[0][i]
+                        robotState['changed_road_markings'] = True
 
         while robotState['watching_road_markings'] == True:
             addLineRead(lineRead(robotParts['pirobot'].get_grayscale_data()))
