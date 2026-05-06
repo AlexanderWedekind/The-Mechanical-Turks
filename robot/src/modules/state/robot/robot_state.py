@@ -17,7 +17,9 @@ robotState = {
         'changed_road_markings': False,
         'grayscale_sensitivity': 400,
         'grayscale_threshold_margin': 0.3,
-        'road_markings': [False, False, False],
+        'road_markings': [
+                [False, False, False],
+             ],
         'driving_speeds': {
             'stopped': 0,
             'forwards': 30,
