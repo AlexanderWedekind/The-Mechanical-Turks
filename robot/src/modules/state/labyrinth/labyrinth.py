@@ -9,6 +9,10 @@ class Intersection:
         self.south = south
         self.west = west
 
+class Labyrinth:
+    start = None
+    def addJunction(self):
+        pass
 
-
+labyrinth = Labyrinth()
 

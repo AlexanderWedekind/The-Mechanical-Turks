@@ -20,6 +20,7 @@ robotState = {
         'road_markings': [
                 [False, False, False],
              ],
+        'junction_detect_time_interval': 1,
         'driving_speeds': {
             'stopped': 0,
             'forwards': 30,
