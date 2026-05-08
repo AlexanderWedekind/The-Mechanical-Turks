@@ -11,7 +11,7 @@ def followLine():
         robotState['following_line'] = True
         while robotState['following_line'] == True:
             drivingSpeed.forwardsLineFollow()
-            if findJunction() != 'no':
+#            if findJunction() != 'no':
                 
 #    if robotState['following_line'] == False:
 #        robotState['following_line'] = True
@@ -34,29 +34,29 @@ def followLine():
 #            if robotState['road_markings']['right_sensor'] == True and robotState['road_markings']['middle_sensor'] == False:
 #                robotState['current_steering_angle'] = robotState['steering_angles']['shallow_left']
 #                robotParts['pirobot'].set_dir_servo_angle(robotState['current_steering_angle'])
-            if ( robotState['road_markings']['middle_sensor'] == True and robotState['road_markings']['left_sensor'] == True ) or ( robotState['road_markings']['middle_sensor'] == True and robotState['road_markings']['left_sensor'] == True ):
-                if robotState['last_visited_intersection'] == None:
-                    robotState['last_visited_intersection'] = Intersection()
-                    if robotState['bearing'] == 'north':
-                        robotState['last_visited_intersection'].south = 'unexplored_path'
-                    if robotState['bearing'] == 'east':
-                        robotState['last_visited_node'].west = 'unexplored_path'
-                    if robotState['bearing'] == 'south':
-                        robotState['last_visited_node'].north = 'unexplored_path'
-                    if robotState['bearing'] == 'west':
-                        robotState['last_visited_node'].east = 'unexplored_path'
-                elif robotState['bearing'] == 'north':
-                    robotState['last_visited_intersection'].north = Intersection(None, None, robotState['last_visited_intersection'], None)
-                    robotState['last_visited_intersection'] = robotState['last_visited_intersection'].north
-                elif robotState['bearing'] == 'east':
-                    robotState['last_visited_intersection'].east = Intersection(None, None, None, robotState['last_visited_intersection'])
-                    robotState['last_visited_intersection'] = robotState['last_visited_intersection'].east
-                elif robotState['bearing'] == 'south':
-                    robotState['last_visited_intersection'].south = Intersection(robotState['last_visited_intersection'], None, None, None)
-                    robotState['last_visited_intersection'] = robotState['last_visited_intersection'].south
-                elif robotState['bearing'] == 'west':
-                    robotState['last_visited_intersection'].west = Intersection(None, robotState['last_visited_intersection'], None, None)
-                    robotState['last_visited_intersection'] = robotState['last_visited_intersection'].west
+#            if ( robotState['road_markings']['middle_sensor'] == True and robotState['road_markings']['left_sensor'] == True ) or ( robotState['road_markings']['middle_sensor'] == True and robotState['road_markings']['left_sensor'] == True ):
+#                if robotState['last_visited_intersection'] == None:
+#                    robotState['last_visited_intersection'] = Intersection()
+#                    if robotState['bearing'] == 'north':
+#                        robotState['last_visited_intersection'].south = 'unexplored_path'
+#                    if robotState['bearing'] == 'east':
+#                        robotState['last_visited_node'].west = 'unexplored_path'
+#                    if robotState['bearing'] == 'south':
+#                        robotState['last_visited_node'].north = 'unexplored_path'
+#                    if robotState['bearing'] == 'west':
+#                        robotState['last_visited_node'].east = 'unexplored_path'
+#                elif robotState['bearing'] == 'north':
+#                    robotState['last_visited_intersection'].north = Intersection(None, None, robotState['last_visited_intersection'], None)
+#                    robotState['last_visited_intersection'] = robotState['last_visited_intersection'].north
+#                elif robotState['bearing'] == 'east':
+#                    robotState['last_visited_intersection'].east = Intersection(None, None, None, robotState['last_visited_intersection'])
+#                    robotState['last_visited_intersection'] = robotState['last_visited_intersection'].east
+#                elif robotState['bearing'] == 'south':
+#                    robotState['last_visited_intersection'].south = Intersection(robotState['last_visited_intersection'], None, None, None)
+#                    robotState['last_visited_intersection'] = robotState['last_visited_intersection'].south
+#                elif robotState['bearing'] == 'west':
+#                    robotState['last_visited_intersection'].west = Intersection(None, robotState['last_visited_intersection'], None, None)
+#                    robotState['last_visited_intersection'] = robotState['last_visited_intersection'].west
 
 
 
