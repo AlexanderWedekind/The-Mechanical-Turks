@@ -47,7 +47,7 @@ def readRoadMarkings():
                     if keptLineReads[0][i] != robotState['road_markings'][len(robotState['road_markings']) - 1][i]:
                         stateChanged = True
             if stateChanged == True:
-                robotState['road_markings'].append(keptLineReads)
+                robotState['road_markings'].append(keptLineReads[0])
                 robotState['changed_road_markings'] = True
             if len(robotState['road_markings']) > 50:
                 robotState['road_markings'].pop(0)
