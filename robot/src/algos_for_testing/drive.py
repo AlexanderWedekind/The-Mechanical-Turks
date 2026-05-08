@@ -1,7 +1,6 @@
 from modules.state.robot.robot_parts import robotParts
 from modules.state.robot.robot_state import robotState
-from modules.actions.drive import DrivingSpeed
-drivingSpeed = DrivingSpeed()
+from modules.actions.drive import setDrivingSpeed
 
 def testDriving():
     print("-- Press F to start driving; S to stop; Q to quit")
@@ -9,8 +8,8 @@ def testDriving():
     while keyPress != 'q':
         keyPress = input().lower()
         if keyPress == 'f':
-            drivingSpeed.forwards()
+            setDrivingSpeed.forwards()
         if keyPress == 's':
-            drivingSpeed.stop()
+            setDrinvingSpeed.stop()
             
  

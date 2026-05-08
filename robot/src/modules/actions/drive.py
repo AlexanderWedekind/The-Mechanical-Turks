@@ -1,7 +1,7 @@
 from modules.state.robot.robot_parts import robotParts
 from modules.state.robot.robot_state import robotState
 
-class DrivingSpeed:
+class SetDrivingSpeed:
     def drive(self, speed):
         robotState['current_speed'] = speed
         robotState['driving'] = True
@@ -21,4 +21,5 @@ class DrivingSpeed:
     def cornering(self):
         self.drive(robotState['driving_speeds']['cornering'])
         
+setDrivingSpeed = SetDrivingSpeed()
 

@@ -2,15 +2,14 @@ from modules.state.robot.robot_parts import robotParts
 from modules.state.robot.robot_state import robotState
 import threading
 from modules.state.labyrinth.labyrinth import labyrinth
-from modules.actions.drive import DrivingSpeed
-drivingSpeed = DrivingSpeed()
+from modules.actions.drive import setDrivingSpeed
 from modules.actions.detect_junctions import findJunction
 
 def followLine():
     if robotState['following_line'] == False:
         robotState['following_line'] = True
         while robotState['following_line'] == True:
-            drivingSpeed.forwardsLineFollow()
+            setDrivingSpeed.forwardsLineFollow()
 #            if findJunction() != 'no':
                 
 #    if robotState['following_line'] == False:
