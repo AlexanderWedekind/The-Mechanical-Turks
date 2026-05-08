@@ -1,6 +1,6 @@
 from modules.actions.line_navigation import lineFollowingThread
 from modules.state.robot.robot_state import robotState
-from modules.state.environment.labyrinth import 
+from modules.state.labyrinth.labyrinth import labyrinth
 
 def TraverseLabyrinth():
     print("press F to start line following. Q to exit")
