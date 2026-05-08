@@ -4,12 +4,12 @@ from modules.actions.drive import setDrivingSpeed
 
 def testDriving():
     print("-- Press F to start driving; S to stop; Q to quit")
-    keyPress = input().lower()
+    keyPress = ""
     while keyPress != 'q':
         keyPress = input().lower()
         if keyPress == 'f':
             setDrivingSpeed.forwards()
         if keyPress == 's':
-            setDrinvingSpeed.stop()
+            setDrivingSpeed.stop()
             
  
