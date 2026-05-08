@@ -21,15 +21,10 @@ def readRoadMarkings():
             nonlocal keptLineReads
             consistent = True
             for i in range(3):
-                if consistent == False:
-                    break
-                else:
-                    for j in range(4):
-                        if keptLineReads[j][i] == keptLineReads[j + 1][i]:
-                            consistent = True
-                        else:
-                            consistent = False
-                            break
+                for j in range(4):
+                    if keptLineReads[j][i] != keptLineReads[j + 1][i]:
+                        consistent = False
+                        break
             return consistent
 
         def addLineRead(reads):
