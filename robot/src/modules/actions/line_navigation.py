@@ -1,7 +1,7 @@
 from modules.state.robot.robot_parts import robotParts
 from modules.state.robot.robot_state import robotState
 import threading
-from modules.state.labyrinth.intersections import Intersection
+from modules.state.labyrinth.labyrinth import labyrinth
 from modules.actions.drive import DrivingSpeed
 drivingSpeed = DrivingSpeed()
 from modules.actions.detect_junctions import findJunction
