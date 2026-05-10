@@ -4,11 +4,11 @@ from modules.state.robot.robot_state import robotState
 import time
 
 def readDistance():
-    if robotState['watching_distance'] == False:
-        robotState['watching_distance'] = True
-        while robotState['watching_distance'] == True:
-            robotState['distance'] = round(robotParts['pirobot'].ultrasonic.read(), 2)
-            time.sleep(robotState['read_distance_timeout'])
-        robotState['was_used_watch_distance'] = True
+    if robotState.watchingDistance == False:
+        robotState.watchingDistance = True
+        while robotState.watchingDistance == True:
+            robotState.distance = round(robotParts.pirobot.ultrasonic.read(), 2)
+            time.sleep(robotState.readDistanceTimeout)
+        robotState.wasUsedWatchDistance = True
 
 watchDistance = threading.Thread(target = readDistance)

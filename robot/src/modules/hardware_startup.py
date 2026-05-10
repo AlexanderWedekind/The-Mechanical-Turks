@@ -10,23 +10,23 @@ from modules.state.robot.robot_parts import robotParts
 
 
 def initPirobot():
-    robotParts['pirobot'] = Picarx()
+    robotParts.pirobot = Picarx()
     print('- Pirobot initialised...')
 
 def initMusic():
-    robotParts['music'] = Music()
+    robotParts.music = Music()
     print('- Music initialised...')
 
 def initTTS():
-    robotParts['tts'] = TTS()
+    robotParts.tts = TTS()
     print('- TTS initialised...')
 
 def initMotors():
-    robotParts['motors'] = Motors()
+    robotParts.motors = Motors()
     print('- Motors initialised...')
 
 def startWatchingRoadMarkings():
-    if robotState['was_used_watch_road_markings'] == False:
+    if robotState.wasUsedWatchRoadMarkings == False:
         if watchRoadMarkings.is_alive() == False:
             watchRoadMarkings.start()
         else:
@@ -35,7 +35,7 @@ def startWatchingRoadMarkings():
         print("--> road marking thread cannot be used twice")
 
 def startWatchingDistance():
-    if robotState['was_used_watch_distance'] == False:
+    if robotState.wasUsedWatchDistance == False:
         if watchDistance.is_alive() == False:
             watchDistance.start()
         else:
@@ -44,11 +44,11 @@ def startWatchingDistance():
         print("--> watch distance thread can only be used once")
 
 def initHardware():
-    if robotParts['pirobot'] == None:
+    if robotParts.pirobot == None:
         crashCallLogExc(initPirobot)
-    if robotParts['music'] == None:
+    if robotParts.music == None:
         crashCallLogExc(initMusic)
-    if robotParts['tts'] == None:
+    if robotParts.tts == None:
         crashCallLogExc(initTTS)
 #    if robotParts['motors'] == None:
 #        crashCallLogExc(initMotors)

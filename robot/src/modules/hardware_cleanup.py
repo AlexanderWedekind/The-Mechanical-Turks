@@ -6,22 +6,22 @@ from modules.state.robot.get_distance import watchDistance
 
 def pirobotCleanup():
     if watchDistance.is_alive():
-        robotState['watching_distance'] = False
+        robotState.watchingDistance = False
         watchDistance.join()
     if watchRoadMarkings.is_alive():
-        robotState['watching_road_markings'] = False
+        robotState.watchingRoadMarkings = False
         watchRoadMarkings.join()
-    robotParts['pirobot'].stop()
+    robotParts.pirobot.stop()
     print('- Pirobot cleaned up...')
-    robotParts['pirobot'] = None
+    robotParts.pirobot = None
 
 def motorsCleanup():
-    robotParts['motors'].stop()
+    robotParts.motors.stop()
     print('- Motors cleaned up...')
-    robotParts['motors'] = None
+    robotParts.motors = None
 
 def hardwareCleanup():
-    if robotParts['pirobot'] != None:
+    if robotParts.pirobot != None:
         contCallLogExc(pirobotCleanup)
 #    if robotParts['motors'] != None:
 #        contCallLogExc(motorsCleanup)

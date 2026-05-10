@@ -8,7 +8,7 @@ def testDriving():
     while keyPress != 'q':
         keyPress = input().lower()
         if keyPress == 'f':
-            setDrivingSpeed.forwards()
+            setDrivingSpeed.forwards.go()
         if keyPress == 's':
             setDrivingSpeed.stop()
             

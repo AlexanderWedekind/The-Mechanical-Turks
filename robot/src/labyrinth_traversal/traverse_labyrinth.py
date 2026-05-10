@@ -11,7 +11,7 @@ def TraverseLabyrinth():
             lineFollow = lineFollowingThread()
             lineFollow.start()
     if lineFollow.is_alive():
-        robotState['following_line'] = False
+        robotState.followingLine = False
         lineFollow.join()
 
 

@@ -23,10 +23,10 @@ def junctionDetected(values):
     return finding
 
 def findJunction():
-    length = len(robotState['road_markings'])
-    for i in range(robotState['junction_detect_time_interval'] * 10):
+    length = len(robotState.roadMarkings)
+    for i in range(robotState.junctionDetectTimeInterval * 10):
         if (length - i) > -1:
-            if junctionDetected(robotState['road_markings'][length - i]) == True:
-                return junctionDirection(robotState['road_markings'][length - i])
+            if junctionDetected(robotState.roadMarkings[length - i]) == True:
+                return junctionDirection(robotState.roadMarkings[length - i])
     return 'no'
 

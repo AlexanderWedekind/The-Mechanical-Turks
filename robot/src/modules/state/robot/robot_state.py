@@ -1,4 +1,20 @@
-robotState = {
+class SteeringAngles:
+    def __init__(self):
+        self.sharpRight = 45
+        self.sharpLeft = 45
+        self.shallowRight = 15
+        self.shallowLeft = 15
+
+class DrivingSpeeds:
+    def __init__(self):
+        self.stopped = 0
+        self.forwards = 30
+        self.reverse = 10
+        self.forwardsLineFollow = 25
+        self.reverseLineFollow = 5
+        self.cornering = 15
+
+OLDrobotState = {
         'driving': False,
         'current_speed': 0,
         'current_steering_angle': 0,
@@ -38,3 +54,33 @@ robotState = {
         'last_visited_intersection': None,
         'bearing': 'north',
         }
+
+class RobotState:
+    def __init__(self):
+        self.driving = False
+        self.currentSpeed = 0
+        self.currentSteeringAngle = 0
+        self.roadClear = True
+        self.closingDown = True
+        self.watchingRoadMarkings = False
+        self.wasUsedWatchRoadMarkings = False
+        self.readDistanceTimeout = 0.02
+        self.distance = 0
+        self.watchingDistance = False
+        self.wasUsedWatchDistance = False
+        self.isOnLine = False
+        self.isFollowingLine = False
+        self.readRoadMarkingsTimeout = 0.02
+        self.changedRoadMarkings = False
+        self.grayscaleSensitivity = 400
+        self.grayscaleThresholdMargin = 0.3
+        self.roadMarkings = [
+            [False, False, False],
+        ]
+        self.junctionDetectTimeInterval = 1
+        self.drivingSpeeds = DrivingSpeeds()
+        self.steeringAngles = SteeringAngles()
+        self.lastVisitedJunction = None
+        self.bearing = 'north'
+
+robotState = RobotState()

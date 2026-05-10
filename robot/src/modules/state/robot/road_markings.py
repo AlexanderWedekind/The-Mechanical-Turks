@@ -4,11 +4,11 @@ from modules.state.robot.robot_state import robotState
 import time
 
 def printRoadMarkings(changed = ""):
-    print(f"-- Road Markings{changed}: [{robotState['road_markings'][len(robotState['road_markings']) - 1][0]}] [{robotState['road_markings'][len(robotState['road_markings']) - 1][1]}] [{robotState['road_markings'][len(robotState['road_markings']) - 1][2]}]")
+    print(f"-- Road Markings{changed}: [{robotState.roadMarkings[len(robotState.roadMarkings) - 1][0]}] [{robotState.roadMarkings[len(robotState.roadMarkings) - 1][1]}] [{robotState.roadMarkings[len(robotState.roadMarkings) - 1][2]}]")
 
 def readRoadMarkings():
-    if robotState['watching_road_markings'] == False:
-        robotState['watching_road_markings'] = True
+    if robotState.watchingRoadMarkings == False:
+        robotState.watchingRoadMarkings = True
         keptLineReads = [
                 [False, False, False],
                 [False, False, False],
@@ -35,7 +35,7 @@ def readRoadMarkings():
         def lineRead(grayScaleReads):
             lineRead = [False, False, False]
             for i in range(3):
-                if grayScaleReads[i] < (robotState['grayscale_sensitivity'] + (robotState['grayscale_sensitivity'] * robotState['grayscale_threshold_margin'])):
+                if grayScaleReads[i] < (robotState.grayscaleSensitivity + (robotState.grayscaleSensitivity * robotState.grayscaleThresholdMargin)):
                     lineRead[i] = True
             return lineRead
 
@@ -44,22 +44,22 @@ def readRoadMarkings():
             stateChanged = False
             if consistentLineReads() == True:
                 for i in range(3):
-                    if keptLineReads[0][i] != robotState['road_markings'][len(robotState['road_markings']) - 1][i]:
+                    if keptLineReads[0][i] != robotState.road_markings[len(robotState.roadMarkings) - 1][i]:
                         stateChanged = True
             if stateChanged == True:
-                robotState['road_markings'].append(keptLineReads[0])
-                robotState['changed_road_markings'] = True
-            if len(robotState['road_markings']) > 50:
-                robotState['road_markings'].pop(0)
+                robotState.road_markings.append(keptLineReads[0])
+                robotState.changedRoadMarkings = True
+            if len(robotState.roadMarkings) > 50:
+                robotState.roadMarkings.pop(0)
 
-        while robotState['watching_road_markings'] == True:
-            addLineRead(lineRead(robotParts['pirobot'].get_grayscale_data()))
+        while robotState.watchingRoadMarkings == True:
+            addLineRead(lineRead(robotParts.pirobot.get_grayscale_data()))
             addRoadMarkingsState()
-            if robotState['changed_road_markings'] == True:
+            if robotState.changedRoadMarkings == True:
                 printRoadMarkings(' changed')
-                robotState['changed_road_markings'] = False
-            time.sleep(robotState['read_road_markings_timeout'])
-        robotState['was_used_watch_road_markings'] = True
+                robotState.changedRoadMarkings = False
+            time.sleep(robotState.readRoadMarkingsTimeout)
+        robotState.wasUsedWatchRoadMarkings = True
 
 watchRoadMarkings = threading.Thread(target = readRoadMarkings)
 

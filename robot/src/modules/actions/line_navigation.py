@@ -6,10 +6,10 @@ from modules.actions.drive import setDrivingSpeed
 from modules.actions.detect_junctions import findJunction
 
 def followLine():
-    if robotState['following_line'] == False:
-        robotState['following_line'] = True
-        while robotState['following_line'] == True:
-            setDrivingSpeed.forwardsLineFollow()
+    if robotState.followingLine == False:
+        robotState.followingLine = True
+        while robotState.followingLine == True:
+            setDrivingSpeed.forwardsLineFollow.go()
 #            if findJunction() != 'no':
                 
 #    if robotState['following_line'] == False:
