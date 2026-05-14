@@ -32,5 +32,7 @@
     - multiple threads
         - read road markings
         - sense diatance
-    - 
 
+- difficulties
+    - kanban free trial expiration
+    - website source code / server access issue, due to single person access
