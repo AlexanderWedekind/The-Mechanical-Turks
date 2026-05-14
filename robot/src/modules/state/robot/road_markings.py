@@ -44,7 +44,7 @@ def readRoadMarkings():
             stateChanged = False
             if consistentLineReads() == True:
                 for i in range(3):
-                    if keptLineReads[0][i] != robotState.road_markings[len(robotState.roadMarkings) - 1][i]:
+                    if keptLineReads[0][i] != robotState.roadMarkings[len(robotState.roadMarkings) - 1][i]:
                         stateChanged = True
             if stateChanged == True:
                 robotState.road_markings.append(keptLineReads[0])
